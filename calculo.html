@@ -174,7 +174,7 @@
 				let hora1 = document.getElementById("hora1").value;
 				let min1  = document.getElementById("min1").value;
 				let dia1  = document.getElementById("dia1").value;
-				let preco1 = document.getElementById("preco1").value;
+				let preco1 = (document.getElementById("preco1").value).replace(/,/g, '.');
 				let potenciak = (Number(pot1) / 1000);
 				let periodo   = (Number(hora1) + (Number(min1) / 60)) * Number(dia1);
 				let consumo   = Math.round((potenciak * periodo * Number(preco1))*100)/100;
@@ -185,7 +185,7 @@
 				let hora2 = document.getElementById("hora2").value;
 				let min2  = document.getElementById("min2").value;
 				let dia2  = document.getElementById("dia2").value;
-				let preco2 = document.getElementById("preco2").value;
+				let preco2 = (document.getElementById("preco2").value).replace(/,/g, '.');
 				let potenciak = (Number(pot2) / 1000);
 				let periodo   = (Number(hora2) + (Number(min2) / 60)) * Number(dia2);
 				let consumo   = Math.round((potenciak * periodo * Number(preco2))*100)/100;
@@ -196,7 +196,7 @@
 				let hora3 = document.getElementById("hora3").value;
 				let min3  = document.getElementById("min3").value;
 				let dia3  = document.getElementById("dia3").value;
-				let preco3 = document.getElementById("preco3").value;
+				let preco3 = (document.getElementById("preco3").value).replace(/,/g, '.');
 				let potenciak = (Number(pot3) / 1000);
 				let periodo   = (Number(hora3) + (Number(min3) / 60)) * Number(dia3);
 				let consumo   = Math.round((potenciak * periodo * Number(preco3))*100)/100;
