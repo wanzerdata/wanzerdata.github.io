@@ -17,7 +17,6 @@
     <!-- Custom fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    
 
     <!-- Custom styles -->
     <link href="css/grayscale.min.css" rel="stylesheet">
@@ -49,8 +48,6 @@
       </div>
     </nav>
 
-
-
     <!-- Sobre Section -->
     <section id="about" class="content-section text-center">
     <h2>Calcule o consumo de energia de até três equipamentos simultaneamente</h2> 
@@ -65,11 +62,11 @@
           <div class="card-body">
             <h5 class="card-title text-muted text-uppercase text-center">Primeiro equipamento</h5>
             <hr>
-             <input type="text" class="form-control" id="pot1" placeholder="Potência(W)">
-             <input type="number" class="form-control" id="hora1" placeholder="Horas (até 24 horas)" max="24" min="0"> 
-             <input type="number" class="form-control" id="min1" placeholder="Minutos (até 60 minutos) " max="60" min="0"> 
-             <input type="text" class="form-control" id="dia1" placeholder="Dias"> 
-             <input type="text" class="form-control" id="preco1" placeholder="Preço(kWh)"> 
+             <input type="number" class="form-control" id="pot1" placeholder="Potência(W)">
+             <input type="number" class="form-control" id="hora1" placeholder="Horas (até 24 horas)" > 
+             <input type="number" class="form-control" id="min1" placeholder="Minutos (até 60 minutos)" > 
+             <input type="number" class="form-control" id="dia1" placeholder="Dias"> 
+             <input type="number" class="form-control" id="preco1" placeholder="Preço(kWh)" step="0.01"> 
             <hr>
             <input type="text" id="resultado1" readonly><br>
             <hr>
@@ -85,11 +82,11 @@
           <div class="card-body">
             <h5 class="card-title text-muted text-uppercase text-center">Segundo equipamento</h5>
             <hr>
-             <input type="text" class="form-control" id="pot2" placeholder="Potência(W)">
-             <input type="number" class="form-control" id="hora2" placeholder="Horas (até 24 horas)" max="24" min="0"> 
-             <input type="number" class="form-control" id="min2" placeholder="Minutos (até 60 minutos) " max="60" min="0"> 
-             <input type="text" class="form-control" id="dia2" placeholder="Dias"> 
-             <input type="text" class="form-control" id="preco2" placeholder="Preço(kWh)"> 
+             <input type="number" class="form-control" id="pot2" placeholder="Potência(W)">
+             <input type="number" class="form-control" id="hora2" placeholder="Horas (até 24 horas)" > 
+             <input type="number" class="form-control" id="min2" placeholder="Minutos (até 60 minutos) "> 
+             <input type="number" class="form-control" id="dia2" placeholder="Dias"> 
+             <input type="number" class="form-control" id="preco2" placeholder="Preço(kWh)" step="0.01"> 
             <hr>
               <input type="text" id="resultado2" readonly><br>
             <hr>
@@ -105,11 +102,11 @@
           <div class="card-body">
             <h5 class="card-title text-muted text-uppercase text-center">Terceiro equipamento</h5>
             <hr>
-             <input type="text" class="form-control" id="pot3" placeholder="Potência(W)">
-             <input type="number" class="form-control" id="hora3" placeholder="Horas (até 24 horas)" max="24" min="0"> 
-             <input type="number" class="form-control" id="min3" placeholder="Minutos (até 60 minutos) " max="60" min="0"> 
-             <input type="text" class="form-control" id="dia3" placeholder="Dias"> 
-             <input type="text" class="form-control" id="preco3" placeholder="Preço(kWh)"> 
+             <input type="number" class="form-control" id="pot3" placeholder="Potência(W)">
+             <input type="number" class="form-control" id="hora3" placeholder="Horas (até 24 horas)"> 
+             <input type="number" class="form-control" id="min3" placeholder="Minutos (até 60 minutos) "> 
+             <input type="number" class="form-control" id="dia3" placeholder="Dias"> 
+             <input type="number" class="form-control" id="preco3" placeholder="Preço(kWh)" step="0.01"> 
              <hr>
              <input type="text" id="resultado3" readonly><br>
             <hr>
@@ -154,7 +151,6 @@
 				document.getElementById("resultado"+y).value = "";
 				}
 			</script>
-    
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
