@@ -17,7 +17,7 @@
     <!-- Custom fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+    
 
     <!-- Custom styles -->
     <link href="css/grayscale.min.css" rel="stylesheet">
@@ -33,8 +33,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
-            </li>
+              <a class="nav-link js-scroll-trigger" href="https://wanzerdata.github.io/calculo">Calculadora</a>
+            <!-- </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contato">Contato</a>
             </li>
@@ -42,7 +42,7 @@
               <a class="nav-link js-scroll-trigger" href="#servicos">Serviços</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a> -->
             </li>
           </ul>
         </div>
@@ -65,27 +65,17 @@
           <div class="card-body">
             <h5 class="card-title text-muted text-uppercase text-center">Primeiro equipamento</h5>
             <hr>
-            
-        
              <input type="text" class="form-control" id="pot1" placeholder="Potência(W)">
-           
              <input type="number" class="form-control" id="hora1" placeholder="Horas (até 24 horas)" max="24" min="0"> 
-            
              <input type="number" class="form-control" id="min1" placeholder="Minutos (até 60 minutos) " max="60" min="0"> 
-          
              <input type="text" class="form-control" id="dia1" placeholder="Dias"> 
-            
              <input type="text" class="form-control" id="preco1" placeholder="Preço(kWh)"> 
-             
-             
-             <hr>
-             
-             <input type="text" id="resultado1" readonly><br>
             <hr>
-            
-            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Calcular" onclick="calcSum1()">
-           
-             </div>
+            <input type="text" id="resultado1" readonly><br>
+            <hr>
+            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Calcular" onclick="calcSum('1');">
+             <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Limpar" onclick="clearSum('1');">
+            </div>
         </div>
       </div>
   
@@ -95,69 +85,44 @@
           <div class="card-body">
             <h5 class="card-title text-muted text-uppercase text-center">Segundo equipamento</h5>
             <hr>
-            
-        
              <input type="text" class="form-control" id="pot2" placeholder="Potência(W)">
-           
              <input type="number" class="form-control" id="hora2" placeholder="Horas (até 24 horas)" max="24" min="0"> 
-            
              <input type="number" class="form-control" id="min2" placeholder="Minutos (até 60 minutos) " max="60" min="0"> 
-          
              <input type="text" class="form-control" id="dia2" placeholder="Dias"> 
-            
              <input type="text" class="form-control" id="preco2" placeholder="Preço(kWh)"> 
-             
-             
-             <hr>
-             
-             <input type="text" id="resultado2" readonly><br>
             <hr>
-            
-            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Calcular" onclick="calcSum2()">
-           
+              <input type="text" id="resultado2" readonly><br>
+            <hr>
+            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Calcular" onclick="calcSum('2');">
+			<input  class="btn btn-block btn-primary text-uppercase" type="button" value="Limpar" onclick="clearSum('2');">
              </div>
         </div>
       </div>
+
 		<!-- Terceiro equipamento -->
       <div class="col-lg-4">
         <div class="card mb-5 mb-lg-0">
           <div class="card-body">
             <h5 class="card-title text-muted text-uppercase text-center">Terceiro equipamento</h5>
             <hr>
-            
-        
              <input type="text" class="form-control" id="pot3" placeholder="Potência(W)">
-           
              <input type="number" class="form-control" id="hora3" placeholder="Horas (até 24 horas)" max="24" min="0"> 
-            
              <input type="number" class="form-control" id="min3" placeholder="Minutos (até 60 minutos) " max="60" min="0"> 
-          
              <input type="text" class="form-control" id="dia3" placeholder="Dias"> 
-            
              <input type="text" class="form-control" id="preco3" placeholder="Preço(kWh)"> 
-             
              <hr>
-             
              <input type="text" id="resultado3" readonly><br>
             <hr>
-            
-            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Calcular" onclick="calcSum3()">
-           
+            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Calcular" onclick="calcSum('3');">
+            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Limpar" onclick="clearSum('3');">
              </div>
         </div>
-      </div>	
-
-
-
-
-
-
-
+      </div>
 
     <!-- Rodape -->
     <footer>
       <div class="container text-center">
-        <p>Copyright &copy; WanzerData 2017</p>
+        <p>Copyright &copy; WanzerData 2019</p>
       </div>
     </footer>
 
@@ -169,38 +134,24 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 	<!-- Script calcula tensão -->
 			<script>
-				function calcSum1() {
-				let pot1  = document.getElementById("pot1").value;
-				let hora1 = document.getElementById("hora1").value;
-				let min1  = document.getElementById("min1").value;
-				let dia1  = document.getElementById("dia1").value;
-				let preco1 = (document.getElementById("preco1").value).replace(/,/g, '.');
-				let potenciak = (Number(pot1) / 1000);
-				let periodo   = (Number(hora1) + (Number(min1) / 60)) * Number(dia1);
-				let consumo   = Math.round((potenciak * periodo * Number(preco1))*100)/100;
-				document.getElementById("resultado1").value = "R$ " + consumo;
+				function calcSum(x) {
+				let pot  = document.getElementById("pot"+x).value;
+				let hora = document.getElementById("hora"+x).value;
+				let minu  = document.getElementById("min"+x).value;
+				let dia  = document.getElementById("dia"+x).value;
+				let preco = (document.getElementById("preco"+x).value).replace(/,/g, '.');
+				let potenciak = (Number(pot) / 1000);
+				let periodo   = (Number(hora) + (Number(minu) / 60)) * Number(dia);
+				let consumo   = Math.round((potenciak * periodo * Number(preco))*100)/100;
+				document.getElementById("resultado"+x).value = "R$ " + consumo;
 				}
-				function calcSum2() {
-				let pot2  = document.getElementById("pot2").value;
-				let hora2 = document.getElementById("hora2").value;
-				let min2  = document.getElementById("min2").value;
-				let dia2  = document.getElementById("dia2").value;
-				let preco2 = (document.getElementById("preco2").value).replace(/,/g, '.');
-				let potenciak = (Number(pot2) / 1000);
-				let periodo   = (Number(hora2) + (Number(min2) / 60)) * Number(dia2);
-				let consumo   = Math.round((potenciak * periodo * Number(preco2))*100)/100;
-				document.getElementById("resultado2").value = "R$ " + consumo;
-				}
-				function calcSum3() {
-				let pot3  = document.getElementById("pot3").value;
-				let hora3 = document.getElementById("hora3").value;
-				let min3  = document.getElementById("min3").value;
-				let dia3  = document.getElementById("dia3").value;
-				let preco3 = (document.getElementById("preco3").value).replace(/,/g, '.');
-				let potenciak = (Number(pot3) / 1000);
-				let periodo   = (Number(hora3) + (Number(min3) / 60)) * Number(dia3);
-				let consumo   = Math.round((potenciak * periodo * Number(preco3))*100)/100;
-				document.getElementById("resultado3").value = "R$ " + consumo;
+				function clearSum(y) {
+				document.getElementById("pot"+y).value = "";
+				document.getElementById("hora"+y).value = "";
+				document.getElementById("min"+y).value = "";
+				document.getElementById("dia"+y).value = "";
+				document.getElementById("preco"+y).value = "";
+				document.getElementById("resultado"+y).value = "";
 				}
 			</script>
     
