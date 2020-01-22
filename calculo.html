@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	<link rel="icon" href="./img/logo.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>WanzerData - Suporte em TI</title>
+
+    <!-- css core -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles -->
+    <link href="css/grayscale.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navi -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-weight:bold">WanzerData</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="https://wanzerdata.github.io/calculo">Calculadora</a>
+            <!-- </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contato">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#servicos">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sobre Section -->
+    <section id="about" class="content-section text-center">
+    <h2>Calcule o consumo de energia de até três equipamentos simultaneamente</h2> 
+ 
+    </section>
+
+<div class="container">
+    <div class="row">
+      <!-- Primeiro equipamento -->
+      <div class="col-lg-4">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center">Primeiro equipamento</h5>
+            <hr>
+             <input type="number" class="form-control" id="pot1" placeholder="Potência(W)">
+             <input type="number" class="form-control" id="hora1" placeholder="Horas (até 24 horas)" > 
+             <input type="number" class="form-control" id="min1" placeholder="Minutos (até 60 minutos)" > 
+             <input type="number" class="form-control" id="dia1" placeholder="Dias"> 
+             <input type="number" class="form-control" id="preco1" placeholder="Preço(kWh)" step="0.01"> 
+            <hr>
+            <input type="text" id="resultado1" readonly><br>
+            <hr>
+            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Calcular" onclick="calcSum('1');">
+             <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Limpar" onclick="clearSum('1');">
+            </div>
+        </div>
+      </div>
+  
+      <!-- Segundo equipamento -->
+      <div class="col-lg-4">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center">Segundo equipamento</h5>
+            <hr>
+             <input type="number" class="form-control" id="pot2" placeholder="Potência(W)">
+             <input type="number" class="form-control" id="hora2" placeholder="Horas (até 24 horas)" > 
+             <input type="number" class="form-control" id="min2" placeholder="Minutos (até 60 minutos) "> 
+             <input type="number" class="form-control" id="dia2" placeholder="Dias"> 
+             <input type="number" class="form-control" id="preco2" placeholder="Preço(kWh)" step="0.01"> 
+            <hr>
+              <input type="text" id="resultado2" readonly><br>
+            <hr>
+            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Calcular" onclick="calcSum('2');">
+			<input  class="btn btn-block btn-primary text-uppercase" type="button" value="Limpar" onclick="clearSum('2');">
+             </div>
+        </div>
+      </div>
+
+		<!-- Terceiro equipamento -->
+      <div class="col-lg-4">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center">Terceiro equipamento</h5>
+            <hr>
+             <input type="number" class="form-control" id="pot3" placeholder="Potência(W)">
+             <input type="number" class="form-control" id="hora3" placeholder="Horas (até 24 horas)"> 
+             <input type="number" class="form-control" id="min3" placeholder="Minutos (até 60 minutos) "> 
+             <input type="number" class="form-control" id="dia3" placeholder="Dias"> 
+             <input type="number" class="form-control" id="preco3" placeholder="Preço(kWh)" step="0.01"> 
+             <hr>
+             <input type="text" id="resultado3" readonly><br>
+            <hr>
+            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Calcular" onclick="calcSum('3');">
+            <input  class="btn btn-block btn-primary text-uppercase" type="button" value="Limpar" onclick="clearSum('3');">
+             </div>
+        </div>
+      </div>
+
+    <!-- Rodape -->
+    <footer>
+      <div class="container text-center">
+        <p>Copyright &copy; WanzerData 2019</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<!-- Script calcula tensão -->
+			<script>
+				function calcSum(x) {
+				let pot  = document.getElementById("pot"+x).value;
+				let hora = document.getElementById("hora"+x).value;
+				let minu  = document.getElementById("min"+x).value;
+				let dia  = document.getElementById("dia"+x).value;
+				let preco = (document.getElementById("preco"+x).value).replace(/,/g, '.');
+				let potenciak = (Number(pot) / 1000);
+				let periodo   = (Number(hora) + (Number(minu) / 60)) * Number(dia);
+				let consumo   = Math.round((potenciak * periodo * Number(preco))*100)/100;
+				document.getElementById("resultado"+x).value = "R$ " + consumo;
+				}
+				function clearSum(y) {
+				document.getElementById("pot"+y).value = "";
+				document.getElementById("hora"+y).value = "";
+				document.getElementById("min"+y).value = "";
+				document.getElementById("dia"+y).value = "";
+				document.getElementById("preco"+y).value = "";
+				document.getElementById("resultado"+y).value = "";
+				}
+			</script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/grayscale.min.js"></script>
+
+  </body>
+
+</html>
