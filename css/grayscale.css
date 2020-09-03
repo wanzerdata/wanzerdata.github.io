@@ -100,14 +100,15 @@ a {
   padding: 200px 0;
   text-align: center;
   color: white;
-  background: url("../img/intro_bg.jpg") no-repeat bottom center scroll;
+  background: url("../img/intro_bg.jpg") no-repeat bottom center scroll;    
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
   .masthead .intro-body {
-    display: table-cell;
+    
+	display: table-cell;
     vertical-align: middle; }
     .masthead .intro-body .brand-heading {
       font-size: 50px; }
